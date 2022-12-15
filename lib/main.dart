@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   runApp(const MyApp());
@@ -12,6 +13,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  Random random = Random();
   int x = 0;
 
   @override
@@ -56,6 +58,13 @@ class _MyAppState extends State<MyApp> {
               ],
             ),
           ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            x = random.nextInt(100);
+            setState(() {});
+          },
+          child: const Icon(Icons.refresh),
         ),
       ),
     );
